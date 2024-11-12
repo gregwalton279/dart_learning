@@ -8,6 +8,7 @@ class Person {
   final String name;
   // final int age=18;
   final int age;
+  final String groupByAge;
   final String address;
 
   // Person(this.name, this.age);
@@ -17,8 +18,9 @@ class Person {
 
   // 初始化列表
   // 初始化列表中不能使用this
-  Person(this.name, {String? paramAddress})
-      : age = 18,
+  Person(this.name, {int? age, String? paramAddress})
+      : this.age = age ?? 18,
+        this.groupByAge = (age ?? 18) > 17 ? "成年" : "未成年",
         this.address = paramAddress ?? "" {
     // this.age = 19; // 报错
   }
